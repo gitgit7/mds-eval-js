@@ -1,15 +1,18 @@
 'use strict';
 
 var checkPhoneNumber = function (number) {
-    var regex = /0[167][0-9]{8}/;
-    
+  var regexPhone = /^(01|06|07)[0-9]{8}$/;
 
-    //if(number.match(regex));
+  var result = regexPhone.test(number);
 
-
+    if (result == true) {
+      return true;
+    } 
+  
+    if (result == false) {
+      return false;
+    } 
 }
 
 checkPhoneNumber('0123456789');
 
-
-// regex uniquement sur du string
