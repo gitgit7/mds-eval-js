@@ -1,27 +1,19 @@
 'use strict';
 
-/**
- * @param {String} str 
- */
-var checkPalindrome = function (str) {
-    var strtmp = str.toLowerCase().replace(/ /gi, '');
-    var reverseString = strtmp.split('').reverse().join('');
-	return(strtmp === reverseString)
+function checkPalindrome(str) {
+
+  var strtmp = "";
+  var strstr = str.toLowerCase(); // je prend en compte la sensibilite a la casse
+
+  var i = 0;
+  while (i < str.length) {
+    if (strstr[i] >= 'a' && strstr[i] <= 'z') // Si le caractère correspond au lettre de l'alphabet
+    {
+      strtmp += str[i]; // Concaténe le caractère dans une string.
+    }
+    ++i;
+  }
+
+  return (strtmp.split('').reverse().join('') == strtmp); // retourne true si palindrome et false si ce n'est pas le cas.
+
 }
-
-
-// prendre en compte les caractères spéciaux et les ponctuations, y compris les accents.
-
-// ascii 
-// a: 97, z: 122, A: 65, Z: 90
-
-// à finir
-
-
-
-
-
-
-
-
-// demon service dedier a la repetition des taches
