@@ -9,7 +9,7 @@ function checkPalindrome(str) {
   while (i < str.length) {
     if (strstr[i] >= 'a' && strstr[i] <= 'z') // Si le caractère correspond au lettre de l'alphabet
     {
-      strtmp += str[i]; // Concaténe le caractère dans une string.
+      strtmp += strstr[i]; // Concaténe le caractère dans une string.
     }
     ++i;
   }
