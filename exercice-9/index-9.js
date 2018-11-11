@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ * @param {String} str 
+ */
 var checkPalindrome = function (str) {
     var strtmp = str.toLowerCase().replace(/ /gi, '');
     var reverseString = strtmp.split('').reverse().join('');
