@@ -1,36 +1,40 @@
 'use strict';
 
-var checkPalindrome = function (str) {
-    var filter = str.toLowerCase().replace(/ /gi, '');
-    var reverseString = filter.split('').reverse().join('');
-
-    console.log("filter: " + filter);
-    console.log("reverseString: " + reverseString);
-
-    if (filter === reverseString) 
-        return true;
-    else
-        return false; 
-
-    console.log(' ----------------------------------------------------- ');
+/**
+ * Class drawBar
+ * @constructor
+ */
+var drawBar = function (sum,nbr) {        
+   this.sum = sum; // sum: somme totale du nombre
+   this.nbr = nbr; // nbr: pour la progression
 }
 
-checkPalindrome('LA MALADE pedala mal');
-checkPalindrome('Et la marine va venir à Malte');
-checkPalindrome("À l'étape, épate-la ! ");
+drawBar.prototype.percent = function () {
+    return ((this.nbr/this.sum)*100);
+}
 
-// prendre en compte les caractères spéciaux et les ponctuations, y compris les accents.
+drawBar.prototype.draw = function() {
+   if(!document.getElementById("1")) { // si ma barre n'existe pas 
+      var myBar = document.createElement("div");
+      myBar.setAttribute("id", "1");
+                
+      var myProgressBar = document.createElement("div");
+      myProgressBar.setAttribute("id", "2");
+      myBar.appendChild(myProgressBar);
 
-// ascii 
-// a: 97, z: 122, A: 65, Z: 90
+      myProgressBar.style.width = this.nbr +'px';
+      myProgressBar.style.height = '30px';
+      myProgressBar.style.backgroundColor = '#2ecc71';  // barre vert8
+      document.body.appendChild(myBar);
+      myProgressBar.innerHTML = this.percent()+" %";
+   }
+   myBar.style.width = this.sum + 'px';
+   myBar.style.height = '30px';
+   myBar.style.border = 'solid';
+   myBar.style.backgroundColor = '#f2f2f1';        // barre grise
+}
 
-// à finir
+//j'instancie une barre
+var bar = new drawBar(300,178);
 
-
-
-
-
-
-
-
-// demon service dedier a la repetition des taches
+bar.draw();

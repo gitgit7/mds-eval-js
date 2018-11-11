@@ -16,5 +16,3 @@ var computeNote = function (notes) {
 
 computeNote(notes);
 
-
-// exo ok 

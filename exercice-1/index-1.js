@@ -51,5 +51,5 @@ function colorGenerator() {
 }
 
 setInterval(function () {
-	gridGenerator( 5,5 );
+	gridGenerator(25, 25);
 }, 1000);

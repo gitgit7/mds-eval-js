@@ -2,6 +2,7 @@
 
 var checkPhoneNumber = function (number) {
     var regex = /0[167][0-9]{8}/;
+    
 
     //if(number.match(regex));
 
